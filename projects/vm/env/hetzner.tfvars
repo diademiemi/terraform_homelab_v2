@@ -3,6 +3,7 @@ libvirt_uri = "qemu+tcp://localhost:5000/system"
 
 vm_memory = "32768"
 vm_vcpu  = "6"
+vm_disk_size = 268435456000
 
 libvirt_external_interface = "enp34s0"
 

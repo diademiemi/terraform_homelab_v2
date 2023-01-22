@@ -9,7 +9,7 @@ resource "libvirt_volume" "vm_disk" {
   name           = "vm_disk"
   pool           = "default"
   base_volume_id = libvirt_volume.opensuse_microos.id
-  size           = "536870912000" // 500GB disk
+  size           = var.vm_disk_size
 }
 
 data "template_file" "vm_cloudinit" {
