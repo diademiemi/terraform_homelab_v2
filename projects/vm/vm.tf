@@ -42,6 +42,13 @@ resource "libvirt_domain" "vm" {
     volume_id = libvirt_volume.vm_disk.id
   }
 
+  dynamic "disk" {
+    for_each = var.vm_disk_passthroughs
+    content {
+      block_device = disk.value
+    }
+  }
+
   network_interface {
     macvtap        = var.libvirt_external_interface
     hostname       = var.vm_hostname
