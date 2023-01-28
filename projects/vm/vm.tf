@@ -1,14 +1,14 @@
-resource "libvirt_volume" "opensuse_microos" {
-  name   = "opensuse_microos"
+resource "libvirt_volume" "debian" {
+  name   = "debian"
   pool   = "default"
-  source = "https://download.opensuse.org/tumbleweed/appliances/openSUSE-MicroOS.x86_64-OpenStack-Cloud.qcow2" # MicroOS cloud-init image
+  source = "https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-generic-amd64.qcow2" # MicroOS cloud-init image
   format = "qcow2"
 }
 
 resource "libvirt_volume" "vm_disk" {
   name           = "vm_disk"
   pool           = "default"
-  base_volume_id = libvirt_volume.opensuse_microos.id
+  base_volume_id = libvirt_volume.debian.id
   size           = var.vm_disk_size
 }
 
