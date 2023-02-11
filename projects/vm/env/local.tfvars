@@ -5,7 +5,7 @@ vm_memory = "61440"
 vm_vcpu  = "12"
 vm_disk_size = 68719476736
 
-libvirt_external_interface = "enp7s0"
+libvirt_external_interface = "enp5s0"
 
 vm_hostname   = "omori" # My network hostnames are named after indie games or content from them
 vm_domain     = "blahaj.sh"
